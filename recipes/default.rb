@@ -1,20 +1,23 @@
 #
-# Cookbook Name:: packer
-# Recipe:: default
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
-# Copyright (C) 2013 Hadapt, Inc.
-# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-# Install packages necessary for extracting stuff
-include_recipe "ark"
-
-ark 'packer' do
-    url "#{node[:packer][:url_base]}/#{node[:packer][:version]}_#{node[:os]}_#{node[:packer][:arch]}.zip"
-    version node[:packer][:version]
-    checksum node[:packer][:checksum]
-    has_binaries ["packer"]
-    append_env_path false
-    strip_leading_dir false
-
-    action :install
+case node['packer']['install_method']
+when 'binary'
+  include_recipe 'packer::install_binary'
+when 'source'
+  include_recipe 'packer::install_source'
+else
+  # rubocop:disable Metrics/LineLength
+  Chef::Application.fatal!("[packer::default] unknown install method, method=#{node['consul']['install_method']}")
 end

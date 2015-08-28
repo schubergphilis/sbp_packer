@@ -38,5 +38,8 @@ to verify integrity.
 [remote_file]: http://docs.opscode.com/resource_remote_file.html#file-re-downloads
 
 # Author
+Thanks to Emil Sit for the original cookbook and the following for inspiration through PR's and their chef work:
+John Bellone (<jbellone@bloomberg.net>) - https://github.com/johnbellone/consul-cookbook/tree/v0.11.1/recipes
 
 Author:: Emil Sit (<sit@hadapt.com>)
+Author:: Andrew Repton (<arepton@schubergphilis.com>)
