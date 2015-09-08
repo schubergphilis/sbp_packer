@@ -1,6 +1,7 @@
-# packer cookbook
+# sbp_packer cookbook
 
 Installs [Packer](http://packer.io/) using the [ark](https://github.com/opscode-cookbooks/ark) cookbook.
+Original cookbook from Emil Sit : https://github.com/sit/chef-packer
 
 # Requirements
 
@@ -9,6 +10,7 @@ None.
 # Usage
 
 Just include `recipe[packer]` in your run list.
+Change attribute from 'binary' to 'source' if you prefer to install directly from github
 
 This will put Packer into `/usr/local` in a `packer-*version*` directory, with a symlink of `packer` to `/usr/local/bin`.
 
@@ -20,6 +22,7 @@ This will put Packer into `/usr/local` in a `packer-*version*` directory, with a
 * `node[:packer][:raw_checksums]` - The contents of the upstream checksum file to allow checksum auto-detection.
 * `node[:packer][:checksums]` - A `Hash` mapping file name to checksums, derived by default from `raw_checksums`.
 * `node[:packer][:checksum]` - SHA-256 checksum of appropriate binary. Should be auto-detected for the default version using data in `raw_checksums` or `checksums`.
+* `node[:packer][:install_method]` - Either 'binary' or 'source'
 
 When overriding with a particular desired version, you can set the checksum a variety of ways. When
 this cookbook is updated for a new default version, the checksums will be updated by the maintainers.
@@ -42,4 +45,5 @@ Thanks to Emil Sit for the original cookbook and the following for inspiration t
 John Bellone (<jbellone@bloomberg.net>) - https://github.com/johnbellone/consul-cookbook/tree/v0.11.1/recipes
 
 Author:: Emil Sit (<sit@hadapt.com>)
+
 Author:: Andrew Repton (<arepton@schubergphilis.com>)
