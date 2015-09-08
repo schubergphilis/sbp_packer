@@ -1,4 +1,4 @@
-name 'packer'
+name 'sbp_packer'
 maintainer 'Andrew Repton'
 maintainer_email 'arepton@schubergphilis.com'
 license 'Apache 2.0'
