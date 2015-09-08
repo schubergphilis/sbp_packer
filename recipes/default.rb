@@ -14,9 +14,9 @@
 
 case node['packer']['install_method']
 when 'binary'
-  include_recipe 'packer::install_binary'
+  include_recipe 'sbp_packer::install_binary'
 when 'source'
-  include_recipe 'packer::install_source'
+  include_recipe 'sbp_packer::install_source'
 else
   # rubocop:disable Metrics/LineLength
   Chef::Application.fatal!("[packer::default] unknown install method, method=#{node['consul']['install_method']}")
