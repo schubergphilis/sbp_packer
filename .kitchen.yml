@@ -14,12 +14,12 @@ platforms:
 suites:
   - name: binary_install
     run_list:
-      - recipe[packer::default]
+      - recipe[sbp_packer::default]
     attributes:
 
   - name: source_install
     run_list:
-      - recipe[packer::default]
+      - recipe[sbp_packer::default]
     attributes:
       packer:
         install_method: 'source'
