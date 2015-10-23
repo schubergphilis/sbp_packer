@@ -31,3 +31,9 @@ default['packer']['checksum'] = node['packer']['checksums'][filename]
 default['packer']['install_method'] = 'binary'
 default['packer']['install_dir'] = '/usr/local/bin'
 default['packer']['source_revision'] = 'master'
+
+# Windows attribute
+if platform_family?('windows')
+  node.default['packer']['win_install_dir'] = 'C:\packer'
+  node.default['packer']['owner'] = 'Administrator'
+end

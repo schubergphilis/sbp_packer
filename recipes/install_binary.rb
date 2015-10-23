@@ -17,5 +17,17 @@ ark 'packer' do
   append_env_path false
   strip_components 0
 
+  if platform_family?('windows')
+    win_install_dir node['packer']['win_install_dir']
+    owner node['packer']['owner']
+  end
+
   action :install
+end
+
+# update path
+if platform_family?('windows')
+   windows_path node['packer']['win_install_dir'] do
+     action :add
+   end
 end
