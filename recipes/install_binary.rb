@@ -18,7 +18,7 @@ ark 'packer' do
   strip_components 0
 
   if platform_family?('windows')
-  	win_install_dir node['packer']['win_install_dir']
+    win_install_dir node['packer']['win_install_dir']
     owner node['packer']['owner']
   end
 
