@@ -1,6 +1,7 @@
 default['packer']['url_base'] = 'https://dl.bintray.com/mitchellh/packer'
 default['packer']['version'] = '0.8.6'
 default['packer']['arch'] = kernel['machine'] =~ /x86_64/ ? 'amd64' : '386'
+default['packer']['zipfile'] = ''
 
 # rubocop:disable Metrics/LineLength
 # Transform raw output of the bintray checksum list into a Hash[filename, checksum].
