@@ -16,13 +16,13 @@ This will put Packer into `/usr/local` in a `packer-*version*` directory, with a
 
 # Attributes
 
-* `node[:packer][:url_base]` - Base URL from which to download (in case you have your own mirror). Defaults to the link at http://www.packer.io/downloads.html.
-* `node[:packer][:version]` - The version of Packer to install.
-* `node[:packer][:arch]` - Architecture to use; auto-detects amd64 and 386 but you must override with arm if desired.
-* `node[:packer][:raw_checksums]` - The contents of the upstream checksum file to allow checksum auto-detection.
-* `node[:packer][:checksums]` - A `Hash` mapping file name to checksums, derived by default from `raw_checksums`.
-* `node[:packer][:checksum]` - SHA-256 checksum of appropriate binary. Should be auto-detected for the default version using data in `raw_checksums` or `checksums`.
-* `node[:packer][:install_method]` - Either 'binary' or 'source'
+* `node['packer']['url_base']` - Base URL from which to download (in case you have your own mirror). Defaults to the link at http://www.packer.io/downloads.html.
+* `node['packer']['version']` - The version of Packer to install.
+* `node['packer']['arch']` - Architecture to use; auto-detects amd64 and 386 but you must override with arm if desired.
+* `node['packer']['raw_checksums']` - The contents of the upstream checksum file to allow checksum auto-detection.
+* `node['packer']['checksums']` - A `Hash` mapping file name to checksums, derived by default from `raw_checksums`.
+* `node['packer']['checksum']` - SHA-256 checksum of appropriate binary. Should be auto-detected for the default version using data in `raw_checksums` or `checksums`.
+* `node['packer']['install_method']` - Either 'binary' or 'source'
 
 When overriding with a particular desired version, you can set the checksum a variety of ways. When
 this cookbook is updated for a new default version, the checksums will be updated by the maintainers.
