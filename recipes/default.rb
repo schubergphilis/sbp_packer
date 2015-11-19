@@ -12,12 +12,9 @@
 # limitations under the License.
 #
 
-case node['packer']['install_method']
-when 'binary'
-  include_recipe 'sbp_packer::install_binary'
-when 'source'
-  include_recipe 'sbp_packer::install_source'
-else
-  # rubocop:disable Metrics/LineLength
-  Chef::Application.fatal!("[packer::default] unknown install method, method=#{node['consul']['install_method']}")
+unless %w(binary source).include? node['packer']['install_method']
+  Chef::Application.fatal!('[packer::default] unknown install method, ' \
+    "method=#{node['consul']['install_method']}")
 end
+
+include_recipe "sbp_packer::#{node['packer']['install_method']}"

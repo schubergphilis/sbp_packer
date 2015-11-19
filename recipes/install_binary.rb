@@ -8,9 +8,11 @@
 
 include_recipe 'ark'
 
+node.default['packer']['zipfile'] = "packer_#{node['packer']['version']}_" \
+  "#{node['os']}_#{node['packer']['arch']}.zip"
+
 ark 'packer' do
-  # rubocop:disable Metrics/LineLength
-  url "#{node['packer']['url_base']}/packer_#{node['packer']['version']}_#{node['os']}_#{node['packer']['arch']}.zip"
+  url "#{node['packer']['url_base']}/#{node['packer']['zipfile']}"
   version node['packer']['version']
   checksum node['packer']['checksum']
   has_binaries ['packer']
@@ -27,7 +29,7 @@ end
 
 # update path
 if platform_family?('windows')
-   windows_path node['packer']['win_install_dir'] do
-     action :add
-   end
+  windows_path node['packer']['win_install_dir'] do
+    action :add
+  end
 end
