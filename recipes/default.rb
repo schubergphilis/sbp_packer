@@ -17,4 +17,4 @@ unless %w(binary source).include? node['packer']['install_method']
     "method=#{node['consul']['install_method']}")
 end
 
-include_recipe "sbp_packer::#{node['packer']['install_method']}"
+include_recipe "sbp_packer::install_#{node['packer']['install_method']}"
