@@ -30,7 +30,7 @@ this cookbook is updated for a new default version, the checksums will be update
 
 If you require a particular older (or newer) version, you can update the
 `raw_checksums` with the official SHA256SUM list from
-`https://dl.bintray.com/mitchellh/packer/${VERSION}_SHA256SUMS?direct`
+`https://releases.hashicorp.com/packer/${VERSION}/packer_${VERSION}_SHA256SUMS`
 (easiest), directly override the `checksums` attribute with an explicit map of
 just the versions you want (somewhat more work for you), or just directly
 setting the `checksum` attribute (if you only need a single platform).
