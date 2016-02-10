@@ -1,11 +1,11 @@
-default['packer']['url_base'] = 'https://dl.bintray.com/mitchellh/packer'
+default['packer']['url_base'] = 'https://releases.hashicorp.com/packer'
 default['packer']['version'] = '0.8.6'
 default['packer']['arch'] = kernel['machine'] =~ /x86_64/ ? 'amd64' : '386'
 default['packer']['zipfile'] = ''
 
 # rubocop:disable Metrics/LineLength
-# Transform raw output of the bintray checksum list into a Hash[filename, checksum].
-# https://dl.bintray.com/mitchellh/packer/${VERSION}_SHA256SUMS?direct
+# Transform raw output of the checksum list into a Hash[filename, checksum].
+# https://releases.hashicorp.com/packer/${VERSION}/packer_${VERSION}_SHA256SUMS
 default['packer']['raw_checksums'] = <<-EOF
 1fb3b1382885f39c1f1f159fc7a6ef4be12d074c97fba76e0050d1990a990aed  packer_0.8.6_darwin_386.zip
 91b5e5d4524a7a2f09a07aad1c8e26e1200b47191a42c1b2facac4a27fd674d0  packer_0.8.6_darwin_amd64.zip
