@@ -5,7 +5,10 @@ describe_recipe 'sbp_packer::install_source' do
 
   it 'created source dir' do
     skip 'not tested under Windows' if node['platform_family'] == 'windows'
-    src_dir = "#{node['go']['gopath']}/src/github.com/hashicorp"
+    require 'uri'
+    
+    uri = URI.parse(node['packer']['source_repo_url'])
+    src_dir = "#{node['go']['gopath']}/src/#{uri}".gsub('.git', '')
     directory(src_dir)
       .must_exist
       .with(:mode, '755')
