@@ -15,6 +15,7 @@
 require 'uri'
 
 uri = URI.parse(node['packer']['source_repo_url'])
+golang_install_dir = "#{uri.host}#{uri.path}".gsub('.git', '')
 
 include_recipe 'golang::default'
 
@@ -26,13 +27,17 @@ directory File.join(node['go']['gopath'], 'src/github.com/hashicorp') do
   action :create
 end
 
+directory ::File.dirname(node['packer']['source_install_path']) do
+  recursive true
+end
+
 git node['packer']['source_install_path'] do
   repository node['packer']['source_repo_url']
   reference node['packer']['source_revision']
   action :checkout
 end
 
-golang_package "#{uri.host}#{uri.path}".gsub('.git', '') do
+golang_package golang_install_dir do
   action :install
 end
 
