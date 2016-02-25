@@ -1,6 +1,6 @@
-default['packer']['url_base'] = 'https://releases.hashicorp.com/packer/' \
-  "#{node['packer']['version']}/"
 default['packer']['version'] = '0.9.0'
+default['packer']['url_base'] = 'https://releases.hashicorp.com/packer/' \
+  "#{node['packer']['version']}"
 default['packer']['arch'] = kernel['machine'] =~ /x86_64/ ? 'amd64' : '386'
 default['packer']['zipfile'] = "packer_#{node['packer']['version']}_" \
   "#{node['os']}_#{node['packer']['arch']}.zip"
