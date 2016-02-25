@@ -8,3 +8,8 @@ version '1.2.0'
 
 depends 'ark', '~> 1.0.0'
 depends 'golang', '~> 1.7.0'
+
+supports 'ubuntu', '= 12.04'
+supports 'ubuntu', '= 14.04'
+supports 'centos', '= 6.5'
+supports 'centos', '= 7.1'

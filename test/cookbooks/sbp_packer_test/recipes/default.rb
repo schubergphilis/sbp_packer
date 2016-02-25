@@ -1,1 +1,1 @@
-execute 'apt-get update'
+execute 'apt-get update' if node['platform_family'] == 'debian'
