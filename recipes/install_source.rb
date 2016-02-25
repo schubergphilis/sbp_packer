@@ -23,7 +23,7 @@ directory File.join(node['go']['gopath'], 'src/github.com/hashicorp') do
 end
 
 git File.join(node['go']['gopath'], '/src/github.com/hashicorp/packer') do
-  repository 'http://github.com/hashicorp/packer.git'
+  repository node['packer']['source_repo_url']
   reference node['packer']['source_revision']
   action :checkout
 end
