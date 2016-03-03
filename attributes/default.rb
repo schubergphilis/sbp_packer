@@ -1,7 +1,8 @@
 default['packer']['url_base'] = 'https://releases.hashicorp.com/packer'
 default['packer']['version'] = '0.8.6'
 default['packer']['arch'] = kernel['machine'] =~ /x86_64/ ? 'amd64' : '386'
-default['packer']['zipfile'] = ''
+default['packer']['zipfile'] = "packer_#{node['packer']['version']}_" \
+  "#{node['os']}_#{node['packer']['arch']}.zip"
 
 # rubocop:disable Metrics/LineLength
 # Transform raw output of the checksum list into a Hash[filename, checksum].
