@@ -12,6 +12,11 @@
 # limitations under the License.
 #
 
+require 'uri'
+
+uri = URI.parse(node['packer']['source_repo_url'])
+golang_install_dir = "#{uri.host}#{uri.path}".gsub('.git', '')
+
 include_recipe 'golang::default'
 
 directory File.join(node['go']['gopath'], 'src/github.com/hashicorp') do
@@ -22,13 +27,17 @@ directory File.join(node['go']['gopath'], 'src/github.com/hashicorp') do
   action :create
 end
 
-git File.join(node['go']['gopath'], '/src/github.com/hashicorp/packer') do
-  repository 'http://github.com/hashicorp/packer.git'
+directory ::File.dirname(node['packer']['source_install_path']) do
+  recursive true
+end
+
+git node['packer']['source_install_path'] do
+  repository node['packer']['source_repo_url']
   reference node['packer']['source_revision']
   action :checkout
 end
 
-golang_package 'github.com/hashicorp/packer' do
+golang_package golang_install_dir do
   action :install
 end
 
@@ -38,5 +47,5 @@ directory '/usr/local/bin' do
 end
 
 link '/usr/local/bin/packer' do
-  to File.join(node['go']['gopath'], '/src/github.com/hashicorp/packer')
+  to node['packer']['source_install_path']
 end

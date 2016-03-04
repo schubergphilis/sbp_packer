@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-12.04
@@ -14,11 +14,15 @@ platforms:
 suites:
   - name: binary_install
     run_list:
+      - recipe[minitest-handler]
+      - recipe[sbp_packer_test]
       - recipe[sbp_packer::default]
     attributes:
 
   - name: source_install
     run_list:
+      - recipe[minitest-handler]
+      - recipe[sbp_packer_test]
       - recipe[sbp_packer::default]
     attributes:
       packer:
