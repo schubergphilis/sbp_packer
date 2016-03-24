@@ -8,10 +8,6 @@
 
 include_recipe 'ark'
 
-node.default['packer']['zipfile'] = "#{node['packer']['version']}/" \
-  "packer_#{node['packer']['version']}_" \
-  "#{node['os']}_#{node['packer']['arch']}.zip"
-
 ark 'packer' do
   url "#{node['packer']['url_base']}/#{node['packer']['zipfile']}"
   version node['packer']['version']
