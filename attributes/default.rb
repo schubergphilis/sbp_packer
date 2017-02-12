@@ -1,4 +1,4 @@
-default['packer']['version'] = '0.11.0'
+default['packer']['version'] = '0.12.2'
 default['packer']['url_base'] = 'https://releases.hashicorp.com/packer/' \
   "#{node['packer']['version']}"
 default['packer']['arch'] = kernel['machine'] =~ /x86_64/ ? 'amd64' : '386'
@@ -8,6 +8,22 @@ default['packer']['zipfile'] = "packer_#{node['packer']['version']}_" \
 # rubocop:disable Metrics/LineLength
 # Transform raw output of the checksum list into a Hash[filename, checksum].
 # https://releases.hashicorp.com/packer/${VERSION}/packer_${VERSION}_SHA256SUMS
+default['packer']['raw_checksums']['0.12.2'] = <<-EOF
+c7bc37eccee47b68d3198eca8da68a7f48bc74aff9807f5bc7ea7ca5a053c463  packer_0.12.2_darwin_386.zip
+eef803cd43adc3b67593fd277f94b14ef266fe7124eb247d620beb29ebb4ec85  packer_0.12.2_darwin_amd64.zip
+e5e07b74573cdb712412e96e1e24cd784d42674e519e0d0253d87819286bb2a6  packer_0.12.2_darwin_arm.zip
+13ba36eb94f142b9d404bec3826be0d4fbea166478334b2a8ed90edd0b5bca43  packer_0.12.2_freebsd_386.zip
+dff363b30cf5686adbeb60edbdf33812eeed908b4e715ca4082ec53ff51ffb8c  packer_0.12.2_freebsd_amd64.zip
+06f612a436b320e14b18a0d266c30312fd3d0ed376dd425788b632b19e781e75  packer_0.12.2_freebsd_arm.zip
+458e63a74104e3e550181f5cf2a20f29d79e326c518bcb5723399d4e56ff3f20  packer_0.12.2_linux_386.zip
+035d0ea1fe785ab6b673bc2a79399125d4014f29151e106635fa818bb726bebf  packer_0.12.2_linux_amd64.zip
+daecd0f9c9abb0735cab65029c5e2752c0105f58be58a3e5ea423d5fcbf52a77  packer_0.12.2_linux_arm.zip
+1695210bc8d81bb0aaaa004bc41c65dda9b6d7eb5646a4c94cd1cc35b57293aa  packer_0.12.2_openbsd_386.zip
+21bc55a12799867210f87a7e761cbe4a7be4b205b8b4c5823a7b9b23b5c283b8  packer_0.12.2_openbsd_amd64.zip
+4e52975f3b46f97222858b2a1bf9bcd68d5485c3697775b3cfee98a16fce1812  packer_0.12.2_windows_386.zip
+2d8704a958af1e593c56aaf7da2be511eda535dd6e509dec84dfe28e8c48c5b5  packer_0.12.2_windows_amd64.zip
+EOF
+
 default['packer']['raw_checksums']['0.11.0'] = <<-EOF
 4b6348bfdd8d086c20d919e0abde83fe0d0d1758c25463075f1fad42c5ac0efa  packer_0.11.0_darwin_386.zip
 5e3c3448f0efc33069ecfeae698eea475b37ebff385db596f6f4621edfd52797  packer_0.11.0_darwin_amd64.zip

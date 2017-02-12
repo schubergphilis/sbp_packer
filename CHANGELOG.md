@@ -1,5 +1,9 @@
 This is a changelog for the sbp_packer cookbook.
 
+## 1.4.2
+  * Update to Packer 0.12.2
+  * Update test kitchen centos-6.6 to centos-6.8
+
 ## 1.4.0
   * Fix from ecliptik for incorrectly generated download URL
   * Update to Packer 0.10.0 from ecliptik 
