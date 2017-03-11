@@ -1,5 +1,8 @@
 This is a changelog for the sbp_packer cookbook.
 
+## 1.4.3
+  * Unlock metadata.rb depends for ark and golang.
+
 ## 1.4.2
   * Update to Packer 0.12.2
   * Update test kitchen centos-6.6 to centos-6.8
@@ -20,3 +23,4 @@ This is a changelog for the sbp_packer cookbook.
 Maintainer Andrew Repton <arepton@schubergphilis.com>
 Contributor Dang H. nguyen <haidangwa@gmail.com>
 Contributor Micheal Waltz <ecliptik@gmail.com>
+Contributor Dayne Broderson <broderson@gmail.com>
