@@ -7,8 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.4.4'
 
 depends 'ark', '> 1.0.0'
-depends 'golan', '> 1.7.0'
-depends 'golang'
+depends 'golang', '> 1.7.0'
 
 supports 'ubuntu', '= 12.04'
 supports 'ubuntu', '= 14.04'
