@@ -23,4 +23,3 @@ This is a changelog for the sbp_packer cookbook.
 Maintainer Andrew Repton <arepton@schubergphilis.com>
 Contributor Dang H. nguyen <haidangwa@gmail.com>
 Contributor Micheal Waltz <ecliptik@gmail.com>
-Contributor Dayne Broderson <broderson@gmail.com>

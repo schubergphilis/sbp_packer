@@ -6,7 +6,8 @@ description 'Installs/Configures packer'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.4.4'
 
-depends 'ark'
+depends 'ark', '> 1.0.0'
+depends 'golan', '> 1.7.0'
 depends 'golang'
 
 supports 'ubuntu', '= 12.04'
