@@ -9,7 +9,7 @@ None.
 
 # Usage
 
-Just include `recipe[packer]` in your run list.
+Just include `recipe[sbp_packer]` in your run list.
 Change attribute from 'binary' to 'source' if you prefer to install directly from github
 
 This will put Packer into `/usr/local` in a `packer-*version*` directory, with a symlink of `packer` to `/usr/local/bin`.
