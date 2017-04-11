@@ -14,7 +14,7 @@
 
 unless %w(binary source).include? node['packer']['install_method']
   Chef::Application.fatal!('[packer::default] unknown install method, ' \
-    "method=#{node['consul']['install_method']}")
+    "method=#{node['packer']['install_method']}")
 end
 
 include_recipe "sbp_packer::install_#{node['packer']['install_method']}"
