@@ -1,5 +1,9 @@
 This is a changelog for the sbp_packer cookbook.
 
+##
+  * Chef13 update: disabled minitest-handler in .kitchen.yml
+  * Start on inspec smoke tests for verification
+
 ## 1.4.3
   * Unlock metadata.rb depends for ark and golang.
 

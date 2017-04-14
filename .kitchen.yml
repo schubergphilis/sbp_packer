@@ -2,6 +2,9 @@
 driver:
   name: vagrant
 
+verifier:
+  name: inspec
+
 provisioner:
   name: chef_zero
 
@@ -14,16 +17,22 @@ platforms:
 suites:
   - name: binary_install
     run_list:
-      - recipe[minitest-handler]
+#      - recipe[minitest-handler]
       - recipe[sbp_packer_test]
       - recipe[sbp_packer::default]
     attributes:
+    verifier:
+      inspec_tests:
+        - test/smoke/default
 
   - name: source_install
     run_list:
-      - recipe[minitest-handler]
+#      - recipe[minitest-handler]
       - recipe[sbp_packer_test]
       - recipe[sbp_packer::default]
     attributes:
       packer:
         install_method: 'source'
+    verifier:
+      inspec_tests:
+        - test/smoke/default
