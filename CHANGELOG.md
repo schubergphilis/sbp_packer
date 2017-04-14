@@ -1,8 +1,10 @@
 This is a changelog for the sbp_packer cookbook.
 
-##
-  * Chef13 update: disabled minitest-handler in .kitchen.yml
-  * Start on inspec smoke tests for verification
+## Unreleased
+  * Chef13 compatibility updates
+  * disabled and removed minitest-handler tests
+  * Added new inspec smoke tests for kitchen verification
+  * Added Ubuntu-16.04 to test suites
 
 ## 1.4.3
   * Unlock metadata.rb depends for ark and golang.
@@ -13,7 +15,7 @@ This is a changelog for the sbp_packer cookbook.
 
 ## 1.4.0
   * Fix from ecliptik for incorrectly generated download URL
-  * Update to Packer 0.10.0 from ecliptik 
+  * Update to Packer 0.10.0 from ecliptik
   * Move sha256sums for 0.9.0 back into attributes
 
 ## 1.2.0

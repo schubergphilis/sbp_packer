@@ -11,13 +11,13 @@ provisioner:
 platforms:
   - name: ubuntu-12.04
   - name: ubuntu-14.04
+  - name: ubuntu-16.04
   - name: centos-6.8
   - name: centos-7.1
 
 suites:
   - name: binary_install
     run_list:
-#      - recipe[minitest-handler]
       - recipe[sbp_packer_test]
       - recipe[sbp_packer::default]
     attributes:
@@ -27,7 +27,6 @@ suites:
 
   - name: source_install
     run_list:
-#      - recipe[minitest-handler]
       - recipe[sbp_packer_test]
       - recipe[sbp_packer::default]
     attributes:
